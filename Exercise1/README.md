@@ -11,11 +11,11 @@ conda create -n protein-design python=3.10 -y
 conda activate protein-design
 ```
 
-After entering the project directory, install the dependencies listed in `requirements.txt`:
+After entering the project directory, install the dependencies listed in `requirements_exercise1.txt`:
 
 ```bash
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements_exercise1.txt
 ```
 
 Then install Matplotlib and the specified versions of PyTorch, TorchVision, and TorchAudio:
