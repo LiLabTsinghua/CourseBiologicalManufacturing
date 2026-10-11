@@ -43,7 +43,7 @@ def _load_models():
     protein_dir = str(PROT_T5_DIR)
     tokenizer = T5Tokenizer.from_pretrained(protein_dir, do_lower_case=False, local_files_only=True)
     protein_model = T5EncoderModel.from_pretrained(protein_dir, local_files_only=True).to(device).eval()
-    with (MODEL_DIR / "UniKP for kcat.pkl").open("rb") as f:
+    with ("/data/home/xiongwen2/software/UniKP_model/UniKP_for_kcat.pkl").open("rb") as f:
         kcat_model = pickle.load(f)
     return vocab, smiles_model, tokenizer, protein_model, kcat_model, device
 
