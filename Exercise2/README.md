@@ -9,24 +9,16 @@ All three models use the same sequences from `plp_sequences.csv`. UniProt IDs co
 We recommend creating an isolated Conda environment with Python 3.10.
 
 ```bash
-conda create -n protein-design python=3.10 -y
-conda activate protein-design
+conda create -n protein-design_ex2 python=3.10 -y
+conda activate protein-design_ex2
 ```
 
 After entering the project directory, install the dependencies listed in `requirements_ex2.txt`:
 
 ```bash
-python -m pip install --upgrade pip
 pip install -r requirements_ex2.txt
 ```
 
-Then install Matplotlib and the specified versions of PyTorch, TorchVision, and TorchAudio:
-
-```bash
-pip install matplotlib torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 accelerate==0.26.0
-pip install torch_geometric==2.3.0
-pip install scikit-learn==1.2.2
-```
 
 ## 2. Notebook Overview
 
@@ -57,30 +49,15 @@ The notebook processes all three input sequences in the following order:
 
 ## 3. Running the Tutorial
 
-Activate your prepared course environment. For example, if it is named `protein-design`, run the following commands from the project root:
+Activate your prepared course environment. For example, if it is named `protein-design_ex2`, run the following commands from the project root:
 
 ```bash
-conda activate protein-design
-cd tt2
+conda activate protein-design_ex2
+cd Exercise2
 jupyter lab
 ```
 
 Open `Protein_Filtering.ipynb`, select the appropriate kernel, check the model paths in the first configuration cell, and run the cells from top to bottom. Reduce `CHUNK_SIZE` from 64 to 32 or 16 if ESMFold needs less GPU memory.
-
-Results are saved in `./outputs/section2_protein_filtering/`:
-
-| Output | Content |
-|---|---|
-| `candidates.csv` | Input sequences and UniProt IDs |
-| `structures/*.pdb` | ESMFold predicted structures |
-| `residue_metrics/*.csv`, `esmfold_scores.csv` | Per-residue pLDDT and confidence summaries |
-| `gatsol_scores.csv`, `ranked_candidates.csv` | Solubility predictions and ranking |
-| `unikp_inputs.csv` | Protein–substrate pairs |
-| `unikp_kcat_predictions.csv`, `unikp_kcat_ranked.csv` | kcat predictions and ranking |
-| `protein_filtering_results.csv` | Combined structural confidence, solubility, and kcat results |
-| `interpro_candidates.fasta` | Sequences for manual InterPro submission |
-| `figures/*.png`, `figures/*.html` | Confidence plots, score plots, substrate structure, and interactive structure views |
-| `logs/*.txt`, `run_config.json` | GATSol logs and runtime configuration |
 
 The InterPro step is completed manually in the website. Structure HTML files require an internet connection to load 3Dmol JavaScript. Restart the kernel after changing inputs or configuration. Repeated runs overwrite files with the same names; change `OUTPUT_DIR` to preserve earlier results.
 

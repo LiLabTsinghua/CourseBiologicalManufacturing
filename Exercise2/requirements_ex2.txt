@@ -25,5 +25,12 @@ pip-chill==1.0.5
 prometheus_client==0.24.1
 py3Dmol==2.5.5
 widgetsnbextension==4.0.16
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+accelerate==0.26.0
+torch_geometric==2.3.0
+scikit-learn==1.2.2
 SentencePiece
 rdkit
+matplotlib
