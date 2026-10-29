@@ -31,6 +31,11 @@ torchaudio==2.6.0
 accelerate==0.26.0
 torch_geometric==2.3.0
 scikit-learn==1.2.2
+numpy==1.24.4
 SentencePiece
 rdkit
 matplotlib
+pandas
+transformers
+biopython
+tqdm
